@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .sticky-navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+} */
+
+.custom-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.bg-item {
+  filter: grayscale(70%) brightness(0%);
+}
+
+.animate-slide {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.discover-content {
+  transform: translateX(100%);
+}
