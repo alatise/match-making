@@ -32,11 +32,32 @@
   filter: grayscale(70%) brightness(0%);
 }
 
-.animate-slide {
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.discover-content {
-  transform: translateX(100%);
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 3s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInFromRight 3s ease-out forwards;
 }

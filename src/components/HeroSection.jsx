@@ -1,8 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import videoUrl from "../assets/imgs/hero-vid.mp4";
+import heroImg from "../assets/imgs/hero-img.jpg";
 
 function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    { type: "image", src: heroImg },
+    { type: "video", src: videoUrl },
+  ];
+  const slideRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  useEffect(() => {
+    if (slideRef.current) {
+      slideRef.current.classList.remove("fade");
+      void slideRef.current.offsetWidth; // Trigger reflow
+      slideRef.current.classList.add("fade");
+    }
+  }, [currentSlide]);
+
   return (
     <>
       <div className="flex my-16 px-10 md:px-12 lg:px-20  xl:px-16 2xl:px-20   justify-between items-center w-full">
@@ -15,20 +38,33 @@ function HeroSection() {
             Schedule Your VIP Appointment
           </button>
         </main>
-        <main className="w-3/5  flex-1 ">
-          <div className="transition-opacity duration-300 ease-in-out fade h-full  xl:border-l-[35px]  2xl:border-l-[50px]  xl:border-b-[35px] 2xl:border-b-[50px] border-l-[#0a0d14e2] border-b-[#0a0d14e2]">
-            <video
-              width="100%"
-              height="auto"
-              controls
-              muted
-              autoPlay
-              loop
-              style={{ objectFit: "cover" }}
-            >
-              <source src={videoUrl} type="video/mp4" autoPlay />
-              Your browser does not support the video tag.
-            </video>
+        <main className="w-3/5 flex-1">
+          <div
+            ref={slideRef}
+            className="w-full fade transition-opacity duration-300 ease-in-out fade 
+               xl:border-l-[35px] 2xl:border-l-[50px] xl:border-b-[35px] 2xl:border-b-[50px] 
+               border-l-[#0a0d14e2] border-b-[#0a0d14e2]
+                relative"
+            style={{ height: "70vh" }}
+          >
+            {slides[currentSlide].type === "image" ? (
+              <img
+                src={slides[currentSlide].src}
+                alt="Hero"
+                className="w-full h-full object-cover absolute top-0 left-0"
+              />
+            ) : (
+              <video
+                className="w-full h-full object-cover absolute top-0 left-0"
+                controls
+                muted
+                autoPlay
+                loop
+              >
+                <source src={slides[currentSlide].src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
         </main>
       </div>

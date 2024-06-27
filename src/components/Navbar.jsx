@@ -30,7 +30,7 @@ function Navbar() {
       <hr />
       <div className=" flex justify-center lg:justify-between xl:justify-between px-10  md:px-12 lg:px-20  xl:px-28 2xl:px-36 items-center mx-auto  mt-6">
         <img src={logo} alt="" className="" />
-        <ul className="hidden md:flex gap-5 items-center">
+        <ul className="hidden md:flex gap-7 items-center">
           {navItems.map((item) => (
             <li
               key={item.id}

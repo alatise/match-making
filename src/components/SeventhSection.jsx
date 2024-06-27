@@ -6,7 +6,7 @@ import img2 from "../assets/imgs/img2.png";
 function SeventhSection() {
   return (
     <div className="flex flex-col justify-center px-20 mt-10">
-      <main className="flex justify-between   ">
+      <main className="flex justify-center lg:gap-36 2xl:gap-44 ">
         <p className="xl:text-2xl 2xl:text-3xl">
           Bespoke Experience Tailored to You
         </p>
