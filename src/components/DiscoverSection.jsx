@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import vip from "../assets/imgs/vip.png";
 import splendor from "../assets/imgs/splendor.png";

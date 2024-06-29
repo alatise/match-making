@@ -41,9 +41,9 @@ function HeroSection() {
         <main className="w-3/5 flex-1">
           <div
             ref={slideRef}
-            className="w-full fade transition-opacity duration-300 ease-in-out fade 
+            className="w-full fade transition-all duration-300 ease-in-out  
                xl:border-l-[35px] 2xl:border-l-[50px] xl:border-b-[35px] 2xl:border-b-[50px] 
-               border-l-[#0a0d14e2] border-b-[#0a0d14e2]
+               border-l-[#000000e2] border-b-[#000000e2]
                 relative"
             style={{ height: "70vh" }}
           >
@@ -56,7 +56,6 @@ function HeroSection() {
             ) : (
               <video
                 className="w-full h-full object-cover absolute top-0 left-0"
-                controls
                 muted
                 autoPlay
                 loop
