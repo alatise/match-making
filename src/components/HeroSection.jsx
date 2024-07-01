@@ -21,7 +21,7 @@ function HeroSection() {
   useEffect(() => {
     if (slideRef.current) {
       slideRef.current.classList.remove("fade");
-      void slideRef.current.offsetWidth; // Trigger reflow
+      void slideRef.current.offsetWidth;
       slideRef.current.classList.add("fade");
     }
   }, [currentSlide]);

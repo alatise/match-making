@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState, useEffect } from "react";
 import vip from "../assets/imgs/vip.png";
 import splendor from "../assets/imgs/splendor.png";
 import discoverMain from "../assets/imgs/discover-main-img.png";

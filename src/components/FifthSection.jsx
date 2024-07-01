@@ -51,7 +51,7 @@ function FifthSection() {
             <img
               src={pictures.img}
               alt=""
-              className="cursor-pointer w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-25"
+              className="cursor-pointer w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-20"
             />
             <div className="absolute bottom-0 w-full bg-[#151D30] text-white py-3 px-2 text-center transition-opacity duration-300 group-hover:opacity-0">
               {pictures.title}
